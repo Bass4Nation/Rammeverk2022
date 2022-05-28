@@ -1,4 +1,5 @@
 
+
 function makeNewInput(){
 
 var idStuff = 1;
@@ -40,6 +41,17 @@ for (let index = 0; index < inputElements.length; index++) {
 }
 var json = JSON.stringify(obj)
 console.log(json)
+writeToJson(json)
+}
+
+function writeToJson(jsonString){
+    const fs = require('fs');
+    fs.writeFile('database.json', jsonString, 'utf8', callback);
 
 
+}
+
+function generateWebpage(){
+    var shell = WScript.CreateObject("WScript.Shell");
+    shell.Run("command here");
 }
