@@ -1,19 +1,27 @@
 
 function makeNewInput(){
 
+var idStuff = 1;
+var inputForm = document.getElementById('bestForm');
+var inputLength = inputForm.getElementsByTagName('input').length;
+
+    for (var i = 0; i < inputLength; i++) {
+        idStuff++
+    }
+
 var newLabel = document.createElement("label");
-newLabel.setAttribute("for", "inputX");
-newLabel.innerHTML = "User Input X";
+newLabel.setAttribute("for", "input" + idStuff);
+newLabel.innerHTML = "User Input "+ idStuff;
 
 let newInput = document.createElement("input");
 newInput.className = "input";
-newInput.type = "text"
+newInput.type = "text";
+newInput.name = "input" + idStuff;
 
 let form = document.getElementById("bestForm");
 
 form.appendChild(newLabel)
 form.appendChild(newInput);
-
 }
 
 function handleSubmit(event){;
