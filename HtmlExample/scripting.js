@@ -14,7 +14,7 @@ newInput.className = "input";
 newInput.type = "text";
 newInput.name = "input";
 
-    let form = document.getElementById("inputFields");
+let form = document.getElementById("inputFields");
 
 form.appendChild(newLabel)
 form.appendChild(newInput);
@@ -29,8 +29,21 @@ function submitForm(){
 
     var inputFields = document.getElementById('inputFields')
     var inputElements = inputFields.querySelectorAll('input')
-    inputElements.forEach(element => {
-        console.log(element.value)
+    var obj = { title: "init", content:[] };
+
+for (let index = 0; index < inputElements.length; index++) {
+    if(index == 0){
+        obj.title = inputElements[index].value
+    }else{
+        obj.content.push({"text" :  inputElements[index].value, "id" : index})
+    }   
+}
+var json = JSON.stringify(obj)
+console.log(json)
+
+
+    // inputElements.forEach(element => {
+    //     console.log(element.value)
         
-    });
+    // });
 }
