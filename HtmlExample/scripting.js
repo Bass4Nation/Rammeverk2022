@@ -42,8 +42,4 @@ var json = JSON.stringify(obj)
 console.log(json)
 
 
-    // inputElements.forEach(element => {
-    //     console.log(element.value)
-        
-    // });
 }
