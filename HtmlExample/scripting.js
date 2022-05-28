@@ -11,7 +11,7 @@ var inputLength = inputForm.getElementsByTagName('input').length;
 
 var newLabel = document.createElement("label");
 newLabel.setAttribute("for", "input" + idStuff);
-newLabel.innerHTML = "User Input "+ idStuff;
+newLabel.innerHTML = "User Input "+ idStuff + ":";
 
 let newInput = document.createElement("input");
 newInput.className = "input";
