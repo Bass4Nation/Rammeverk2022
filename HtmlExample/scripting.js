@@ -2,36 +2,35 @@
 function makeNewInput(){
 
 var idStuff = 1;
-var inputForm = document.getElementById('bestForm');
-var inputLength = inputForm.getElementsByTagName('input').length;
+var inputForm = document.getElementById('inputFields');
 
-    for (var i = 0; i < inputLength; i++) {
-        idStuff++
-    }
 
 var newLabel = document.createElement("label");
-newLabel.setAttribute("for", "input" + idStuff);
-newLabel.innerHTML = "User Input "+ idStuff + ":";
+newLabel.setAttribute("for", "input");
+newLabel.innerHTML = "User Input : ";
 
 let newInput = document.createElement("input");
 newInput.className = "input";
 newInput.type = "text";
-newInput.name = "input" + idStuff;
+newInput.name = "input";
 
-let form = document.getElementById("bestForm");
+    let form = document.getElementById("inputFields");
 
 form.appendChild(newLabel)
 form.appendChild(newInput);
 }
 
-function handleSubmit(event){;
-    event.preventDefault();
 
-    const data = new FormData(event.target);
-  
-    const value = data.get("text");
-  
-    console.log({ value });
+
+
+
+
+function submitForm(){
+
+    var inputFields = document.getElementById('inputFields')
+    var inputElements = inputFields.querySelectorAll('input')
+    inputElements.forEach(element => {
+        console.log(element.value)
+        
+    });
 }
-const form = document.querySelector("form");
-form.addEventListener("submit", handleSubmit);
