@@ -28,7 +28,7 @@ function onChanger(){
 
     if(selectValue == "temp1"){
         document.getElementById("selectedHidden").style.display = "block";
-        document.getElementById("selectedHidden").src = "pictures/basic-with-pages-part1.png"
+        document.getElementById("selectedHidden").src = "pictures/basic.png"
     }
     else if(selectValue == "temp2"){
         document.getElementById("selectedHidden").style.display = "block";
