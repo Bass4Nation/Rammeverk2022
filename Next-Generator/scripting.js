@@ -28,6 +28,8 @@ function onChanger(){
 
     if(selectValue == "temp1"){
         document.getElementById("selectedHidden1").style.display = "block";
+        document.getElementById("selectedHidden2").style.display = "none";
+        
         document.getElementById("selectedHidden1").src = "pictures/basic.png"
     }
     else if(selectValue == "temp2"){
