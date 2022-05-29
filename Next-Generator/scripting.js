@@ -27,12 +27,15 @@ function onChanger(){
     var selectValue = e.value;
 
     if(selectValue == "temp1"){
-        document.getElementById("selectedHidden").style.display = "block";
-        document.getElementById("selectedHidden").src = "pictures/basic.png"
+        document.getElementById("selectedHidden1").style.display = "block";
+        document.getElementById("selectedHidden1").src = "pictures/basic.png"
     }
     else if(selectValue == "temp2"){
-        document.getElementById("selectedHidden").style.display = "block";
-        document.getElementById("selectedHidden").src = "pictures/basic-with-pages-part2.png"
+        document.getElementById("selectedHidden1").style.display = "block";
+        document.getElementById("selectedHidden2").style.display = "block";
+        
+        document.getElementById("selectedHidden1").src = "pictures/basic-with-pages-part1.png"
+        document.getElementById("selectedHidden2").src = "pictures/basic-with-pages-part2.png"
     }
     else{
         console.log("Not valid")

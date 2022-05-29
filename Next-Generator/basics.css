@@ -3,7 +3,11 @@ h1{
     margin-right: auto;
     text-align: center;
 }
-#selectedHidden {
+#selectedHidden1 {
+    display: none;
+ }
+
+ #selectedHidden2 {
     display: none;
  }
 
