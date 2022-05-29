@@ -21,7 +21,24 @@ form.appendChild(newLabel)
 form.appendChild(newInput);
 }
 
+//Change picture onchange with Select tag
+function onChanger(){
+    var e = document.getElementById("templates");
+    var selectValue = e.value;
 
+    if(selectValue == "temp1"){
+        document.getElementById("selectedHidden").style.display = "block";
+        document.getElementById("selectedHidden").src = "pictures/basic-with-pages-part1.png"
+    }
+    else if(selectValue == "temp2"){
+        document.getElementById("selectedHidden").style.display = "block";
+        document.getElementById("selectedHidden").src = "pictures/basic-with-pages-part2.png"
+    }
+    else{
+        console.log("Not valid")
+    }
+    
+}
 
 
 

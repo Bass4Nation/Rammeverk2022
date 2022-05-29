@@ -3,6 +3,9 @@ h1{
     margin-right: auto;
     text-align: center;
 }
+#selectedHidden {
+    display: none;
+ }
 
 .container{
     text-align: center;
