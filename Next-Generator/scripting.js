@@ -2,8 +2,8 @@
 
 function makeNewInput(){
 
-var idStuff = 1;
-var inputForm = document.getElementById('inputFields');
+// var idStuff = 1;
+// var inputForm = document.getElementById('inputFields');
 
 
 var newLabel = document.createElement("label");
@@ -45,9 +45,13 @@ writeToJson(json)
 }
 
 function writeToJson(jsonString){
-    const fs = require('fs');
-    fs.writeFile('database.json', jsonString, 'utf8', callback);
-
+    var dataStr = "data:text/json;charset=utf-8," + encodeURIComponent("["+jsonString + "]");
+    var downloadAnchorNode = document.createElement('a');
+    downloadAnchorNode.setAttribute("href", dataStr);
+    downloadAnchorNode.setAttribute("download", "database.json");
+    document.body.appendChild(downloadAnchorNode); // required for firefox
+    downloadAnchorNode.click();
+    downloadAnchorNode.remove();
 
 }
 
