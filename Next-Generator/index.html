@@ -18,17 +18,18 @@
 
         <input type="text" class="input" name="input" id="elements"><br>
 
-        <label for="input2">User input 2:</label><br>
+        <label for="input2">User input :</label><br>
 
         <input type="text" class="input" name="input2" id="elements">
-        <label for="templates">Display template scripts</label>
-                <select name="templates" id="templates" onchange="onChanger()">
-                  <option value="" disabled selected>Select a template</option>
-                  <option value="temp1">Basic.sh</option>
-                  <option value="temp2">Basic-pages.sh</option>
-                </select>
       </section>
-          <section>
+          <section class="allInputs">
+                    <label for="templates">Display template scripts</label>
+                    <select name="templates" id="templates" onchange="onChanger()">
+                      <option value="" disabled selected>Select a template</option>
+                      <option value="temp1">Basic.sh</option>
+                      <option value="temp2">Basic-pages.sh</option>
+                    </select>
+
             <img id="selectedHidden1">
             <img id="selectedHidden2">  
           </section>

@@ -14,6 +14,7 @@ let newInput = document.createElement("input");
 newInput.className = "input";
 newInput.type = "text";
 newInput.name = "input";
+newInput.id = "elements";
 
 let form = document.getElementById("inputFields");
 
