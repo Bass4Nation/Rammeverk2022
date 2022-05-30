@@ -16,10 +16,52 @@ newInput.type = "text";
 newInput.name = "input";
 newInput.id = "elements";
 
+let newButton = document.createElement("button");
+newButton.innerHTML = "+";
+newButton.setAttribute("onclick", "underInput()")
+newButton.id = "createSub"
+
 let form = document.getElementById("inputFields");
 
-form.appendChild(newLabel)
+form.appendChild(newLabel);
 form.appendChild(newInput);
+form.appendChild(newButton);
+}
+
+function underInput(){
+
+    let form = document.getElementById("inputFields");
+    var newSubInput = document.createElement("input");
+    var newSubLabel = document.createElement("label");
+
+    var id = 3;
+    var removeButton = document.getElementById("createSub" + id).style.display = "none";
+
+    newSubLabel.innerHTML = "Sub Input : "
+
+    newSubInput.className = "input";
+    newSubInput.type = "text";
+    newSubInput.name = "input";
+    newSubInput.id = "subInput";
+
+    if(){
+        
+        newSubLabel.innerHTML = "Sub Input : "
+
+        newInput.className = "input";
+        newInput.type = "text";
+        newInput.name = "input";
+        newInput.id = "subInput";
+
+        form.appendChild(newSubLabel);
+        form.appendChild(newSubInput);
+        removeButton;
+        
+    }
+    else if(){
+        
+    }
+
 }
 
 //Change picture onchange with Select tag

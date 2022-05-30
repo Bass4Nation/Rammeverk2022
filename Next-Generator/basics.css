@@ -11,14 +11,24 @@ h1{
     display: none;
  }
 
+
+
 .allInputs{
     margin-left: auto;
     margin-right: auto;
-    width: 8em
+    width: 13em
 }
 
 #elements{
     margin-bottom:1em;
+}
+
+#subInput{
+    margin-bottom:1em;
+}
+
+#createSub{
+  display: block;
 }
 
 .picture{
