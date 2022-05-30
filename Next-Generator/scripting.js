@@ -3,54 +3,60 @@ var inputId = 1;
 
 
 function makeNewInput(){
+    // New section
 var newSection = document.createElement("section")
 newSection.id = "inputs"+inputId
 
+// New lable
 var newLabel = document.createElement("label");
 newLabel.setAttribute("for", "input");
 newLabel.innerHTML = "User Input : ";
 
+// New input
 let newInput = document.createElement("input");
 newInput.className = "input";
 newInput.type = "text";
 newInput.name = "input";
 newInput.id = inputId;
 
+// Show Sub inputs button
 let newButton = document.createElement("button");
 newButton.innerHTML = "+";
 newButton.id = inputId
+
+    // sub Label
+    var newSubLabel = document.createElement("label");
+    newSubLabel.setAttribute("for", "input");
+    newSubLabel.innerHTML = "Sub Input : ";
+    newSubLabel.style = "visibility: hidden;"
+
+    // Sub Input
+    var newSubInput = document.createElement("input");
+    newSubInput.className = "subInput";
+    newSubInput.style = "visibility: hidden;"
+    newSubInput.type = "text";
+    newSubInput.name = "subInput";
+    newSubInput.id = newInput.id;
+    
+
+    // Button to remove
+    let removeButton = document.createElement("button");
+    removeButton.innerHTML = "Remove sub field";
+    removeButton.style = "visibility: hidden;"
+    removeButton.onclick = function () {
+        newButton.style = "visibility: visible;"
+        newSubLabel.style = "visibility: hidden;"
+        newSubInput.style = "visibility: hidden;"
+        removeButton.style = "visibility: hidden;"
+    }
+    removeButton.id = newInput.id
+
+// Make subsection visible
 newButton.onclick = function(){
     newButton.style ="visibility: hidden;"
-        console.log(inputId)
-        //Placement
-        let form = document.getElementById(newSection.id);
-        // sub Label
-        var newSubLabel = document.createElement("label");
-        newSubLabel.setAttribute("for", "input");
-        newSubLabel.innerHTML = "Sub Input : ";
-        // Sub Input
-        var newSubInput = document.createElement("input");
-        newSubInput.className = "subInput";
-        newSubInput.type = "text";
-        newSubInput.name = "input";
-        newSubInput.id = newInput.id ;
-
-        // Button to remove
-        let removeButton = document.createElement("button");
-        removeButton.innerHTML = "Remove sub field";
-        removeButton.onclick = function () {
-            form.removeChild(newSubInput)
-            form.removeChild(newSubLabel)
-            form.removeChild(removeButton)
-            newButton.style = "visibility: visible;"
-
-        }
-        removeButton.id = newInput.id
-        // Creating elements on screen
-        form.appendChild(newSubLabel);
-        form.appendChild(newSubInput);
-        form.appendChild(removeButton)
-
+    newSubLabel.style = "visibility: visible;"
+    newSubInput.style = "visibility: visible;"
+    removeButton.style = "visibility: visible;"
     }
 // Start pos for all input fields on the page
     let form = document.getElementById("inputFields");
@@ -59,7 +65,11 @@ newButton.onclick = function(){
     form.appendChild(newSection);
     document.getElementById(newSection.id).appendChild(newLabel) 
     document.getElementById(newSection.id).appendChild(newInput) 
-    document.getElementById(newSection.id).appendChild(newButton) 
+    document.getElementById(newSection.id).appendChild(newButton)
+    document.getElementById(newSection.id).appendChild(newSubLabel);
+    document.getElementById(newSection.id).appendChild(newSubInput);
+    document.getElementById(newSection.id).appendChild(removeButton)
+ 
     inputId++;
 }
 
@@ -89,22 +99,27 @@ function onChanger(){
 }
 
 
-
-
 function submitForm(){
 
     var inputFields = document.getElementById('inputFields')
     var webpageTitle = document.getElementById('webtitle').value;
-    var inputElements = inputFields.querySelectorAll('input.input')
+
+
+    var allInputSection = inputFields.querySelectorAll('section')
     var obj = { title: webpageTitle, content:[] };
 
-for (let index = 0; index < inputElements.length; index++) {
-    console.log(inputElements[index].id)
+    for (let index = 0; index < allInputSection.length; index++) {
+        let title = allInputSection[index].querySelector('input').value;
+        let data = allInputSection[index].querySelector("input.subInput").value;
+        let id = allInputSection[index].querySelector('input').id;
 
-    obj.content.push({ "text": inputElements[index].value,"data": "" , "id": inputElements[index].id
-})
-      
-}
+    
+        obj.content.push({
+            "text": title,
+            "data": data,
+            "id": id
+        })
+    }
 var json = JSON.stringify(obj)
 console.log(json)
 writeToJson(json)
@@ -119,9 +134,4 @@ function writeToJson(jsonString){
     downloadAnchorNode.click();
     downloadAnchorNode.remove();
 
-}
-
-function generateWebpage(){
-    var shell = WScript.CreateObject("WScript.Shell");
-    shell.Run("command here");
 }
