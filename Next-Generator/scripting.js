@@ -5,6 +5,7 @@ var inputId = 1;
 function makeNewInput(){
     // New section
 var newSection = document.createElement("section")
+newSection.className="sectionInputs"
 newSection.id = "inputs"+inputId
 
 // New lable

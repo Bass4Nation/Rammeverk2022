@@ -6,20 +6,17 @@
    
 	</head>
 	<body onload="makeNewInput()">
+    <h1 class="title">Next.JS - Generator</h1>
     <section >
-		  <h1>Generator</h1>
       <section class="allInputs" id="inputFields">
-        <button onclick="makeNewInput()">New input</button>
-        <br>
         <button onclick="submitForm()">Submit</button>
-        <br>
-        <label for="input1">Webpage title:</label><br>
-
-        <input type="text" class="webtitle" name="input" id="webtitle"> <br>
-
+        <button onclick="makeNewInput()">New input</button>
+        <section class="sectionInputs">
+          <label for="input1">Webpage title:</label>
+          <input type="text" class="webtitle" name="input" id="webtitle">
+        </section>
       </section>
     </section>
-
     <section>
   <select name="templates" id="templates" onchange="onChanger()">
     <option value="" disabled selected>Select a template</option>

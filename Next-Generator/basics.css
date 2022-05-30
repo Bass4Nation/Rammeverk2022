@@ -1,8 +1,35 @@
-h1{
-    margin-left: auto;
-    margin-right: auto;
-    text-align: center;
+*{
+    margin: 0;
+    background-color: #70707b;
+    color: white;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
+
+.title{
+    padding: 1vw;
+    background-color: rgb(51, 41, 84);
+    color: white;
+}
+.allInputs {
+display: flex;
+flex-flow: column wrap;
+}
+
+label{
+    padding-bottom: 2vw;
+}
+input {
+    padding: 2vw;
+    border: 1px solid #021a40;
+    border-radius: 2vw;
+    background-color: white;
+    color:black
+}
+button{
+    border-radius: 2vw;
+    padding: 1vw;
+}
+
 #selectedHidden1 {
     display: none;
  }
@@ -13,11 +40,6 @@ h1{
 
 
 
-.allInputs{
-    margin-left: auto;
-    margin-right: auto;
-    width: 13em
-}
 
 #elements{
     margin-bottom:1em;
@@ -28,7 +50,7 @@ h1{
 }
 
 #createSub{
-  display: block;
+  /* display: block; */
 }
 
 .picture{
@@ -42,4 +64,18 @@ h1{
     margin-left: auto;
     margin-right: auto;
     width: 50%;
+}
+.sectionInputs {
+    display: inline-flex;
+    flex-direction: column;
+    margin-top: 2vw;
+    border: 10vw;
+    border: 1px solid #021a40;
+    border-radius: 2vw;
+    max-width: 50vw;
+    padding-left: 5vw;
+    padding-right: 5vw;
+    padding-bottom: 5vw;
+    margin-left: auto;
+    margin-right: auto;
 }
