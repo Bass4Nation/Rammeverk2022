@@ -1,10 +1,10 @@
+// Global id. Will use with each input and button
+var inputId = 1;
 
 
 function makeNewInput(){
-
-// var idStuff = 1;
-// var inputForm = document.getElementById('inputFields');
-
+var newSection = document.createElement("section")
+newSection.id = "inputs"+inputId
 
 var newLabel = document.createElement("label");
 newLabel.setAttribute("for", "input");
@@ -14,55 +14,55 @@ let newInput = document.createElement("input");
 newInput.className = "input";
 newInput.type = "text";
 newInput.name = "input";
-newInput.id = "elements";
+newInput.id = inputId;
 
 let newButton = document.createElement("button");
 newButton.innerHTML = "+";
-newButton.setAttribute("onclick", "underInput()")
-newButton.id = "createSub"
+newButton.id = inputId
+newButton.onclick = function(){
+    newButton.style ="visibility: hidden;"
+        console.log(inputId)
+        //Placement
+        let form = document.getElementById(newSection.id);
+        // sub Label
+        var newSubLabel = document.createElement("label");
+        newSubLabel.setAttribute("for", "input");
+        newSubLabel.innerHTML = "Sub Input : ";
+        // Sub Input
+        var newSubInput = document.createElement("input");
+        newSubInput.className = "subInput";
+        newSubInput.type = "text";
+        newSubInput.name = "input";
+        newSubInput.id = newInput.id ;
 
-let form = document.getElementById("inputFields");
+        // Button to remove
+        let removeButton = document.createElement("button");
+        removeButton.innerHTML = "Remove sub field";
+        removeButton.onclick = function () {
+            form.removeChild(newSubInput)
+            form.removeChild(newSubLabel)
+            form.removeChild(removeButton)
+            newButton.style = "visibility: visible;"
 
-form.appendChild(newLabel);
-form.appendChild(newInput);
-form.appendChild(newButton);
-}
-
-function underInput(){
-
-    let form = document.getElementById("inputFields");
-    var newSubInput = document.createElement("input");
-    var newSubLabel = document.createElement("label");
-
-    var id = 3;
-    var removeButton = document.getElementById("createSub" + id).style.display = "none";
-
-    newSubLabel.innerHTML = "Sub Input : "
-
-    newSubInput.className = "input";
-    newSubInput.type = "text";
-    newSubInput.name = "input";
-    newSubInput.id = "subInput";
-
-    if(){
-        
-        newSubLabel.innerHTML = "Sub Input : "
-
-        newInput.className = "input";
-        newInput.type = "text";
-        newInput.name = "input";
-        newInput.id = "subInput";
-
+        }
+        removeButton.id = newInput.id
+        // Creating elements on screen
         form.appendChild(newSubLabel);
         form.appendChild(newSubInput);
-        removeButton;
-        
-    }
-    else if(){
-        
-    }
+        form.appendChild(removeButton)
 
+    }
+// Start pos for all input fields on the page
+    let form = document.getElementById("inputFields");
+    // Start pos for each field crated
+
+    form.appendChild(newSection);
+    document.getElementById(newSection.id).appendChild(newLabel) 
+    document.getElementById(newSection.id).appendChild(newInput) 
+    document.getElementById(newSection.id).appendChild(newButton) 
+    inputId++;
 }
+
 
 //Change picture onchange with Select tag
 function onChanger(){
@@ -94,15 +94,16 @@ function onChanger(){
 function submitForm(){
 
     var inputFields = document.getElementById('inputFields')
-    var inputElements = inputFields.querySelectorAll('input')
-    var obj = { title: "init", content:[] };
+    var webpageTitle = document.getElementById('webtitle').value;
+    var inputElements = inputFields.querySelectorAll('input.input')
+    var obj = { title: webpageTitle, content:[] };
 
 for (let index = 0; index < inputElements.length; index++) {
-    if(index == 0){
-        obj.title = inputElements[index].value
-    }else{
-        obj.content.push({"text" :  inputElements[index].value, "id" : index})
-    }   
+    console.log(inputElements[index].id)
+
+    obj.content.push({ "text": inputElements[index].value,"data": "" , "id": inputElements[index].id
+})
+      
 }
 var json = JSON.stringify(obj)
 console.log(json)

@@ -5,7 +5,7 @@
     <script src="scripting.js"></script>
    
 	</head>
-	<body>
+	<body onload="makeNewInput()">
     <section >
 		  <h1>Generator</h1>
       <section class="allInputs" id="inputFields">
@@ -15,11 +15,8 @@
         <br>
         <label for="input1">Webpage title:</label><br>
 
-        <input type="text" class="input" name="input"> <br>
+        <input type="text" class="webtitle" name="input" id="webtitle"> <br>
 
-        <label for="input2">User input 2:</label><br>
-
-        <input type="text" class="input" name="input2"><button onclick="underInput()" id="createSub">+</button>
       </section>
     </section>
 
