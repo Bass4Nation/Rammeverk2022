@@ -29,12 +29,12 @@ newButton.id = inputId
     var newSubLabel = document.createElement("label");
     newSubLabel.setAttribute("for", "input");
     newSubLabel.innerHTML = "Sub Input : ";
-    newSubLabel.style = "visibility: hidden;"
+    newSubLabel.style = "display: none;"
 
     // Sub Input
     var newSubInput = document.createElement("input");
     newSubInput.className = "subInput";
-    newSubInput.style = "visibility: hidden;"
+    newSubInput.style = "display: none;"
     newSubInput.type = "text";
     newSubInput.name = "subInput";
     newSubInput.id = newInput.id;
@@ -43,12 +43,12 @@ newButton.id = inputId
     // Button to remove
     let removeButton = document.createElement("button");
     removeButton.innerHTML = "Remove sub field";
-    removeButton.style = "visibility: hidden;"
+    removeButton.style = "display: none;"
     removeButton.onclick = function () {
-        newButton.style = "visibility: visible;"
-        newSubLabel.style = "visibility: hidden;"
-        newSubInput.style = "visibility: hidden;"
-        removeButton.style = "visibility: hidden;"
+        newButton.style = "display: inline;"
+        newSubLabel.style = "display: none;"
+        newSubInput.style = "display: none;"
+        removeButton.style = "display: none;"
     }
     removeButton.id = newInput.id
 
@@ -109,17 +109,21 @@ function submitForm(){
     var allInputSection = inputFields.querySelectorAll('section')
     var obj = { title: webpageTitle, content:[] };
 
-    for (let index = 0; index < allInputSection.length; index++) {
-        let title = allInputSection[index].querySelector('input').value;
-        let data = allInputSection[index].querySelector("input.subInput").value;
-        let id = allInputSection[index].querySelector('input').id;
 
-    
-        obj.content.push({
-            "text": title,
-            "data": data,
-            "id": id
-        })
+    for (let index = 0; index < allInputSection.length; index++) {
+
+        if(index >= 1){
+            let title = allInputSection[index].querySelector('input').value;
+            let data = allInputSection[index].querySelector("input.subInput").value;
+            let id = allInputSection[index].querySelector('input').id;
+
+
+            obj.content.push({
+                "text": title,
+                "data": data,
+                "id": id
+            })
+        }
     }
 var json = JSON.stringify(obj)
 console.log(json)
