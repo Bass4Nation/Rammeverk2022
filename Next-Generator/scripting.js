@@ -11,7 +11,7 @@ newSection.id = "inputs"+inputId
 // New lable
 var newLabel = document.createElement("label");
 newLabel.setAttribute("for", "input");
-newLabel.innerHTML = "User Input : ";
+newLabel.innerHTML = "Title : ";
 
 // New input
 let newInput = document.createElement("input");
@@ -28,7 +28,7 @@ newButton.id = inputId
     // sub Label
     var newSubLabel = document.createElement("label");
     newSubLabel.setAttribute("for", "input");
-    newSubLabel.innerHTML = "Sub Input : ";
+    newSubLabel.innerHTML = "Content under title : ";
     newSubLabel.style = "display: none;"
 
     // Sub Input
