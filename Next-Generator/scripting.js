@@ -86,12 +86,18 @@ function onChanger(){
         
         document.getElementById("selectedHidden1").src = "pictures/basic.png"
     }
-    else if(selectValue == "temp2"){
+    else if (selectValue == "temp2") {
         document.getElementById("selectedHidden1").style.display = "block";
         document.getElementById("selectedHidden2").style.display = "block";
-        
+
         document.getElementById("selectedHidden1").src = "pictures/basic-with-pages-part1.png"
         document.getElementById("selectedHidden2").src = "pictures/basic-with-pages-part2.png"
+    } else if (selectValue == "temp3") {
+        document.getElementById("selectedHidden1").style.display = "block";
+        document.getElementById("selectedHidden2").style.display = "block";
+
+        document.getElementById("selectedHidden1").src = "pictures/basic-with-pages-topnav-part1.png"
+        document.getElementById("selectedHidden2").src = "pictures/basic-with-pages-topnav-part2.png"
     }
     else{
         console.log("Not valid")
