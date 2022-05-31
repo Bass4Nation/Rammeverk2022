@@ -10,9 +10,21 @@
     background-color: rgb(51, 41, 84);
     color: white;
 }
+
+.guide{
+    text-align: center;
+}
+.guide h2{
+}
+.guide dt{
+    font-size: large;
+}
+
+
 .allInputs {
 display: flex;
 flex-flow: column wrap;
+
 }
 
 label{
@@ -28,6 +40,7 @@ input {
 button{
     border-radius: 2vw;
     padding: 1vw;
+    background-color: #5b5b65;
 }
 
 #selectedHidden1 {
@@ -49,9 +62,6 @@ button{
     margin-bottom:1em;
 }
 
-#createSub{
-  /* display: block; */
-}
 
 .picture{
     max-width: 60vw;
@@ -79,3 +89,10 @@ button{
     margin-left: auto;
     margin-right: auto;
 }
+.selection{
+    font-size: large;
+    text-align: center;
+    background-color: #5b5b65;
+    border-radius: 2vw;
+}
+
