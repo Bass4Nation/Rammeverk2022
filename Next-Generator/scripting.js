@@ -22,7 +22,7 @@ newInput.id = inputId;
 
 // Show Sub inputs button
 let newButton = document.createElement("button");
-newButton.innerHTML = "+";
+newButton.innerHTML = "Add more content";
 newButton.id = inputId
 
     // sub Label
